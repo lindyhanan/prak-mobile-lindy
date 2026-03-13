@@ -94,7 +94,7 @@
             android:layout_height="65dp"
             android:layout_marginTop="40dp"
             android:backgroundTint="#FFC107"
-            android:text="MULAI SEKARANG"
+            android:text="MULAI SEKARANG!"
             android:textColor="#1A237E"
             android:textSize="18sp"
             android:textStyle="bold"
