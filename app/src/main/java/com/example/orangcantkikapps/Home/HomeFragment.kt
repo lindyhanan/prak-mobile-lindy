@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.orangcantkikapps.AuthActivity
 import com.example.orangcantkikapps.Home.pertemuan_4.FourthActivity
 import com.example.orangcantkikapps.Home.pertemuan_7.SeventhActivity
+import com.example.orangcantkikapps.Home.pertemuan_9.NinthActivity
 import com.example.orangcantkikapps.R
 import com.example.orangcantkikapps.databinding.FragmentHomeBinding
 
@@ -44,6 +45,11 @@ class HomeFragment : Fragment() {
         binding.btnToSeventh.setOnClickListener {
 
             val intent = Intent(requireContext(), SeventhActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToNinth.setOnClickListener {
+
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
         binding.btnLogout.setOnClickListener {

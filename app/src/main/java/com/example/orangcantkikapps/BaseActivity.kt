@@ -25,6 +25,7 @@ class BaseActivity : AppCompatActivity() {
             insets
         }
 
+        replaceFragment(HomeFragment())
 
         binding.bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
