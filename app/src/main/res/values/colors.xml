@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg">#9E0B0B</color>
     <color name="wrn_button">#FFA000</color>
-    <color name="pink">#FF9898</color>
+    <color name="pink">#FFC6CA</color>
+
 </resources>
