@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.orangcantkikapps.AuthActivity
+import com.example.orangcantkikapps.Home.pertemuan_10.TenthActivity
 import com.example.orangcantkikapps.Home.pertemuan_4.FourthActivity
 import com.example.orangcantkikapps.Home.pertemuan_7.SeventhActivity
 import com.example.orangcantkikapps.Home.pertemuan_9.NinthActivity
@@ -50,6 +51,12 @@ class HomeFragment : Fragment() {
         binding.btnToNinth.setOnClickListener {
 
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToTenth.setOnClickListener {
+
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
         binding.btnLogout.setOnClickListener {
