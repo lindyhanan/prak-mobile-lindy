@@ -43,7 +43,6 @@ class HomeFragment : Fragment() {
         }
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
         binding.btnToFourth.setOnClickListener {
-
             val intent = Intent(requireContext(), FourthActivity::class.java)
             intent.putExtra("nama", "Politeknik Caltex Riau")
             intent.putExtra("asal", "Rumbai")

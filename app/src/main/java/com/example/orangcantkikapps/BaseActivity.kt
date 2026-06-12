@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.orangcantkikapps.Home.HomeFragment
 import com.example.orangcantkikapps.Message.MessageFragment
 import com.example.orangcantkikapps.More.MoreFragment
+import com.example.orangcantkikapps.Note.NoteFragment
 import com.example.orangcantkikapps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -39,6 +40,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false // return false jika item tidak ada yang di klik
