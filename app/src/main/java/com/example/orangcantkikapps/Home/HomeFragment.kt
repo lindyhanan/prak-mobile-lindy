@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orangcantkikapps.AuthActivity
 import com.example.orangcantkikapps.Home.pertemuan_10.TenthActivity
+import com.example.orangcantkikapps.Home.pertemuan_13.ThirteenthActivity
 import com.example.orangcantkikapps.Home.pertemuan_4.FourthActivity
 import com.example.orangcantkikapps.Home.pertemuan_7.SeventhActivity
 import com.example.orangcantkikapps.Home.pertemuan_9.NinthActivity
@@ -63,6 +64,11 @@ class HomeFragment : Fragment() {
         binding.btnToTenth.setOnClickListener {
 
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToThirteenth.setOnClickListener {
+
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
         binding.btnLogout.setOnClickListener {
