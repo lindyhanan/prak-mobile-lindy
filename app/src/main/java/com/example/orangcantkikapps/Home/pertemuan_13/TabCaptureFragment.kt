@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.orangcantkikapps.databinding.FragmentTabCaptureBinding
 import android.Manifest
+import com.example.orangcantkikapps.utils.PermissionHelper
 
 class TabCaptureFragment : Fragment() {
     private var _binding: FragmentTabCaptureBinding? = null
@@ -53,10 +54,15 @@ class TabCaptureFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnCapture.setOnClickListener {
-            if (hasCameraPermission()) {
-                openCamera()
+            if (!PermissionHelper.hasPermission(
+                    requireActivity(),
+                    Manifest.permission.CAMERA)) {
+                PermissionHelper.requestPermission(
+                    permissionLauncher,
+                    Manifest.permission.CAMERA
+                )
             } else {
-                permissionLauncher.launch(Manifest.permission.CAMERA)
+                openCamera()
             }
         }
     }
@@ -65,12 +71,6 @@ class TabCaptureFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-    private fun hasCameraPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(
-            requireContext(),
-            Manifest.permission.CAMERA
-        ) == PackageManager.PERMISSION_GRANTED
     }
 
     private fun openCamera() {

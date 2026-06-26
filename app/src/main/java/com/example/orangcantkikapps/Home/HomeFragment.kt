@@ -14,8 +14,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.orangcantkikapps.AuthActivity
+import com.example.orangcantkikapps.Home.pertemuan2.SecondActivity
 import com.example.orangcantkikapps.Home.pertemuan_10.TenthActivity
 import com.example.orangcantkikapps.Home.pertemuan_13.ThirteenthActivity
+import com.example.orangcantkikapps.Home.pertemuan_3.ThirdActivity
 import com.example.orangcantkikapps.Home.pertemuan_4.FourthActivity
 import com.example.orangcantkikapps.Home.pertemuan_7.SeventhActivity
 import com.example.orangcantkikapps.Home.pertemuan_9.NinthActivity
@@ -48,6 +50,16 @@ class HomeFragment : Fragment() {
             intent.putExtra("nama", "Politeknik Caltex Riau")
             intent.putExtra("asal", "Rumbai")
             intent.putExtra("usia", 25)
+            startActivity(intent)
+        }
+        binding.btnToSecond.setOnClickListener {
+
+            val intent = Intent(requireContext(), SecondActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToThird.setOnClickListener {
+
+            val intent = Intent(requireContext(), ThirdActivity::class.java)
             startActivity(intent)
         }
         binding.btnToSeventh.setOnClickListener {

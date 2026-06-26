@@ -22,6 +22,7 @@ import com.google.mlkit.vision.common.InputImage
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import android.Manifest
+import com.example.orangcantkikapps.utils.PermissionHelper
 
 class TabScanFragment : Fragment() {
     private var _binding: FragmentTabScanBinding? = null
@@ -57,10 +58,15 @@ class TabScanFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        if (hasCameraPermission()) {
-            startCamera()
+        if (!PermissionHelper.hasPermission(
+                requireActivity(),
+                Manifest.permission.CAMERA)) {
+            PermissionHelper.requestPermission(
+                permissionLauncher,
+                Manifest.permission.CAMERA
+            )
         } else {
-            permissionLauncher.launch(Manifest.permission.CAMERA)
+            startCamera()
         }
     }
 
@@ -70,12 +76,6 @@ class TabScanFragment : Fragment() {
         _binding = null
         scanner?.close()
         cameraExecutor.shutdown()
-    }
-    private fun hasCameraPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(
-            requireContext(),
-            Manifest.permission.CAMERA
-        ) == PackageManager.PERMISSION_GRANTED
     }
 
     private fun startCamera() {
